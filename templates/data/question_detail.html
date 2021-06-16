@@ -23,6 +23,9 @@
             <div class="card"><!-- my-3 삭제-->
                 <div class="card-body">
                     <div class="card-text">{{ question.content|mark }}</div>
+                        {% for photo in question.photo_set.all%}
+                    <img src="{{photo.image.url}}" width="500"><br>
+{% endfor %}
                     <div class="d-flex justify-content-end">
                         {% if question.modify_date %}
                         <div class="badge badge-light p-2 text-left mx-3">
